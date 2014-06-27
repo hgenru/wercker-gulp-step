@@ -61,7 +61,7 @@ if [ -n "$WERCKER_GULP_GULPFILE" ] ; then
 fi
 
 if [ -n "$WERCKER_GULP_TASKS" ] ; then
-    gulp_command="$gulp_command $WERCKER_gulp_TASKS"
+    gulp_command="$gulp_command $WERCKER_GULP_TASKS"
 fi
 
 debug "$gulp_command"
