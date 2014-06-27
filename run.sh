@@ -15,25 +15,25 @@ function npm_package_is_installed {
 # First make sure gulp is installed
 if ! type gulp &> /dev/null ; then
     # Check if it is in repo
-    if ! $(npm_package_is_installed gulp-cli) ; then
-        info "gulp-cli not installed, trying to install it through npm"
+    if ! $(npm_package_is_installed gulp) ; then
+        info "gulp not installed, trying to install it through npm"
 
         if ! type npm &> /dev/null ; then
-            fail "npm not found, make sure you have npm or gulp-cli installed"
+            fail "npm not found, make sure you have npm or gulp installed"
         else
             info "npm is available"
             debug "npm version: $(npm --version)"
 
-            info "installing gulp-cli"
+            info "installing gulp"
             npm config set ca "" --silent
             sudo npm install npm -g --silent
-            sudo npm install -g --silent gulp-cli
+            sudo npm install -g --silent gulp
             gulp_command="gulp"
         fi
     else
         info "gulp is available locally"
-        debug "gulp version: $(./node_modules/gulp-cli/bin/gulp --version)"
-        gulp_command="./node_modules/gulp-cli/bin/gulp"
+        debug "gulp version: $(./node_modules/gulp/bin/gulp --version)"
+        gulp_command="./node_modules/gulp/bin/gulp"
     fi
 else
     info "gulp is available"
