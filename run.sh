@@ -32,8 +32,8 @@ if ! type gulp &> /dev/null ; then
         fi
     else
         info "gulp is available locally"
-        debug "gulp version: $(./node_modules/gulp/bin/gulp --version)"
-        gulp_command="./node_modules/gulp/bin/gulp"
+        debug "gulp version: $(node ./node_modules/gulp/bin/gulp.js --version)"
+        gulp_command="node ./node_modules/gulp/bin/gulp.js"
     fi
 else
     info "gulp is available"
