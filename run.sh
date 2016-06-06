@@ -57,7 +57,7 @@ if [ "$WERCKER_GULP_STACK" = "true" ] ; then
 fi
 
 if [ -n "$WERCKER_GULP_GULPFILE" ] ; then
-    gulp_command="$gulp_command --gulpfile $WERCKER_gulp_gulpFILE"
+    gulp_command="$gulp_command --gulpfile $WERCKER_GULP_GULPFILE"
 fi
 
 if [ -n "$WERCKER_GULP_TASKS" ] ; then
